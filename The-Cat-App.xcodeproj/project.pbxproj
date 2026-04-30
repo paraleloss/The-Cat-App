@@ -13,6 +13,7 @@
 		C78AE9EA2FA3C12D00948EB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C78AE9E92FA3C12D00948EB1 /* Base */; };
 		C78AE9EC2FA3C12F00948EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C78AE9EB2FA3C12F00948EB1 /* Assets.xcassets */; };
 		C78AE9EF2FA3C12F00948EB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C78AE9EE2FA3C12F00948EB1 /* Base */; };
+		C78AE9F82FA3C49A00948EB1 /* CatBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9F72FA3C49A00948EB1 /* CatBreed.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C78AE9EB2FA3C12F00948EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C78AE9EE2FA3C12F00948EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C78AE9F02FA3C12F00948EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C78AE9F72FA3C49A00948EB1 /* CatBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreed.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		C78AE9E12FA3C12D00948EB1 /* The-Cat-App */ = {
 			isa = PBXGroup;
 			children = (
+				C78AE9F62FA3C47C00948EB1 /* Models */,
 				C78AE9E22FA3C12D00948EB1 /* AppDelegate.swift */,
 				C78AE9E42FA3C12D00948EB1 /* SceneDelegate.swift */,
 				C78AE9E62FA3C12D00948EB1 /* ViewController.swift */,
@@ -65,6 +68,14 @@
 				C78AE9F02FA3C12F00948EB1 /* Info.plist */,
 			);
 			path = "The-Cat-App";
+			sourceTree = "<group>";
+		};
+		C78AE9F62FA3C47C00948EB1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				C78AE9F72FA3C49A00948EB1 /* CatBreed.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -141,6 +152,7 @@
 				C78AE9E72FA3C12D00948EB1 /* ViewController.swift in Sources */,
 				C78AE9E32FA3C12D00948EB1 /* AppDelegate.swift in Sources */,
 				C78AE9E52FA3C12D00948EB1 /* SceneDelegate.swift in Sources */,
+				C78AE9F82FA3C49A00948EB1 /* CatBreed.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
