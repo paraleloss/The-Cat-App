@@ -15,6 +15,7 @@
 		C78AE9EF2FA3C12F00948EB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C78AE9EE2FA3C12F00948EB1 /* Base */; };
 		C78AE9F82FA3C49A00948EB1 /* CatBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9F72FA3C49A00948EB1 /* CatBreed.swift */; };
 		C78AE9FA2FA3C86D00948EB1 /* CatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9F92FA3C86D00948EB1 /* CatImage.swift */; };
+		C78AE9FD2FA3C8BB00948EB1 /* CatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9FC2FA3C8BB00948EB1 /* CatAPIService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,7 @@
 		C78AE9F02FA3C12F00948EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C78AE9F72FA3C49A00948EB1 /* CatBreed.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatBreed.swift; sourceTree = "<group>"; };
 		C78AE9F92FA3C86D00948EB1 /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
+		C78AE9FC2FA3C8BB00948EB1 /* CatAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 		C78AE9E12FA3C12D00948EB1 /* The-Cat-App */ = {
 			isa = PBXGroup;
 			children = (
+				C78AE9FB2FA3C8A900948EB1 /* API */,
 				C78AE9F62FA3C47C00948EB1 /* Models */,
 				C78AE9E22FA3C12D00948EB1 /* AppDelegate.swift */,
 				C78AE9E42FA3C12D00948EB1 /* SceneDelegate.swift */,
@@ -79,6 +82,14 @@
 				C78AE9F92FA3C86D00948EB1 /* CatImage.swift */,
 			);
 			path = Models;
+			sourceTree = "<group>";
+		};
+		C78AE9FB2FA3C8A900948EB1 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				C78AE9FC2FA3C8BB00948EB1 /* CatAPIService.swift */,
+			);
+			path = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -153,6 +164,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C78AE9E72FA3C12D00948EB1 /* ViewController.swift in Sources */,
+				C78AE9FD2FA3C8BB00948EB1 /* CatAPIService.swift in Sources */,
 				C78AE9E32FA3C12D00948EB1 /* AppDelegate.swift in Sources */,
 				C78AE9E52FA3C12D00948EB1 /* SceneDelegate.swift in Sources */,
 				C78AE9F82FA3C49A00948EB1 /* CatBreed.swift in Sources */,

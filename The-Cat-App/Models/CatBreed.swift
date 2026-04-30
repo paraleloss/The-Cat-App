@@ -7,17 +7,17 @@
 
 import Foundation
 
-struct Breed: Decodable, Hashable {
+struct CatBreed: Codable {
     let id: String
     let name: String
-    let description: String?
-    let origin: String?
     let temperament: String?
+    let origin: String?
+    let lifeSpan: String?
+    let description: String?
     
-    // to show on table view
-    var displayName: String { name }
-}
-
-struct BreedResponse: Decodable {
-    let breeds: [Breed]
+    enum CodingKeys: String, CodingKey {
+        case id, name, temperament, origin
+        case lifeSpan = "life_span"
+        case description
+    }
 }
