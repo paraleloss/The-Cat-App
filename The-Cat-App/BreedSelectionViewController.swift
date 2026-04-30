@@ -83,7 +83,7 @@ class BreedSelectionViewController: UIViewController {
     
     // MARK: - Setup
     private func setupUI() {
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemRed
         
         view.addSubview(titleLabel)
         view.addSubview(breedLabel)

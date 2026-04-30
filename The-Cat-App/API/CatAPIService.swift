@@ -16,7 +16,7 @@ class CatAPIService {
     private init() {}
     
     func fetchBreeds(completion: @escaping ([CatBreed]?, Error?) -> Void) {
-        var urlString = "\(baseURL)/breeds"
+        let urlString = "\(baseURL)/breeds"
         
         var request = URLRequest(url: URL(string: urlString)!)
         if !apiKey.isEmpty {

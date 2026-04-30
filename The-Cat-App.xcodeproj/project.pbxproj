@@ -18,6 +18,7 @@
 		C78AE9FD2FA3C8BB00948EB1 /* CatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9FC2FA3C8BB00948EB1 /* CatAPIService.swift */; };
 		C78AEA002FA3C9FA00948EB1 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9FF2FA3C9FA00948EB1 /* ImageCollectionViewCell.swift */; };
 		C78AEA022FA3CA7400948EB1 /* BreedSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AEA012FA3CA7400948EB1 /* BreedSelectionViewController.swift */; };
+		C78AEA042FA3CB1E00948EB1 /* ImageGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AEA032FA3CB1E00948EB1 /* ImageGalleryViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		C78AE9FC2FA3C8BB00948EB1 /* CatAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIService.swift; sourceTree = "<group>"; };
 		C78AE9FF2FA3C9FA00948EB1 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C78AEA012FA3CA7400948EB1 /* BreedSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedSelectionViewController.swift; sourceTree = "<group>"; };
+		C78AEA032FA3CB1E00948EB1 /* ImageGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -102,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				C78AE9FF2FA3C9FA00948EB1 /* ImageCollectionViewCell.swift */,
+				C78AEA032FA3CB1E00948EB1 /* ImageGalleryViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -182,6 +185,7 @@
 				C78AE9E32FA3C12D00948EB1 /* AppDelegate.swift in Sources */,
 				C78AEA002FA3C9FA00948EB1 /* ImageCollectionViewCell.swift in Sources */,
 				C78AEA022FA3CA7400948EB1 /* BreedSelectionViewController.swift in Sources */,
+				C78AEA042FA3CB1E00948EB1 /* ImageGalleryViewController.swift in Sources */,
 				C78AE9E52FA3C12D00948EB1 /* SceneDelegate.swift in Sources */,
 				C78AE9F82FA3C49A00948EB1 /* CatBreed.swift in Sources */,
 				C78AE9FA2FA3C86D00948EB1 /* CatImage.swift in Sources */,
