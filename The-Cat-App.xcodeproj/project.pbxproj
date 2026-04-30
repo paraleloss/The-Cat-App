@@ -17,6 +17,7 @@
 		C78AE9FA2FA3C86D00948EB1 /* CatImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9F92FA3C86D00948EB1 /* CatImage.swift */; };
 		C78AE9FD2FA3C8BB00948EB1 /* CatAPIService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9FC2FA3C8BB00948EB1 /* CatAPIService.swift */; };
 		C78AEA002FA3C9FA00948EB1 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9FF2FA3C9FA00948EB1 /* ImageCollectionViewCell.swift */; };
+		C78AEA022FA3CA7400948EB1 /* BreedSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AEA012FA3CA7400948EB1 /* BreedSelectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C78AE9F92FA3C86D00948EB1 /* CatImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatImage.swift; sourceTree = "<group>"; };
 		C78AE9FC2FA3C8BB00948EB1 /* CatAPIService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatAPIService.swift; sourceTree = "<group>"; };
 		C78AE9FF2FA3C9FA00948EB1 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
+		C78AEA012FA3CA7400948EB1 /* BreedSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedSelectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				C78AE9EB2FA3C12F00948EB1 /* Assets.xcassets */,
 				C78AE9ED2FA3C12F00948EB1 /* LaunchScreen.storyboard */,
 				C78AE9F02FA3C12F00948EB1 /* Info.plist */,
+				C78AEA012FA3CA7400948EB1 /* BreedSelectionViewController.swift */,
 			);
 			path = "The-Cat-App";
 			sourceTree = "<group>";
@@ -178,6 +181,7 @@
 				C78AE9FD2FA3C8BB00948EB1 /* CatAPIService.swift in Sources */,
 				C78AE9E32FA3C12D00948EB1 /* AppDelegate.swift in Sources */,
 				C78AEA002FA3C9FA00948EB1 /* ImageCollectionViewCell.swift in Sources */,
+				C78AEA022FA3CA7400948EB1 /* BreedSelectionViewController.swift in Sources */,
 				C78AE9E52FA3C12D00948EB1 /* SceneDelegate.swift in Sources */,
 				C78AE9F82FA3C49A00948EB1 /* CatBreed.swift in Sources */,
 				C78AE9FA2FA3C86D00948EB1 /* CatImage.swift in Sources */,
