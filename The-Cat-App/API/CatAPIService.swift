@@ -7,42 +7,75 @@
 
 import Foundation
 
-import Foundation
-
 class CatAPIService {
     static let shared = CatAPIService()
     private let baseURL = "https://api.thecatapi.com/v1"
-    
-    // ¡¡Cambia esto por tu propia API Key!!
-    private let apiKey = "live_tu_api_key_aqui"   // ← Pon la tuya aquí
+    // Puedes obtener una API Key gratis en https://thecatapi.com
+    private let apiKey = "TU_API_KEY_AQUI" // Deja vacío si no tienes, pero tendrás límites
     
     private init() {}
     
-    // Obtener todas las razas
-    func fetchBreeds() async throws -> [Breed] {
-        let url = URL(string: "\(baseURL)/breeds")!
-        var request = URLRequest(url: url)
-        request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
+    func fetchBreeds(completion: @escaping ([CatBreed]?, Error?) -> Void) {
+        var urlString = "\(baseURL)/breeds"
         
-        let (data, _) = try await URLSession.shared.data(for: request)
-        return try JSONDecoder().decode([Breed].self, from: data)
+        var request = URLRequest(url: URL(string: urlString)!)
+        if !apiKey.isEmpty {
+            request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
+        }
+        
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, NSError(domain: "No data", code: -1))
+                return
+            }
+            
+            do {
+                let breeds = try JSONDecoder().decode([CatBreed].self, from: data)
+                DispatchQueue.main.async {
+                    completion(breeds, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            }
+        }.resume()
     }
     
-    // Buscar imágenes por raza y límite
-    func fetchImages(breedId: String, limit: Int) async throws -> [CatImage] {
-        var components = URLComponents(string: "\(baseURL)/images/search")!
-        components.queryItems = [
-            URLQueryItem(name: "breed_ids", value: breedId),
-            URLQueryItem(name: "limit", value: "\(limit)"),
-            URLQueryItem(name: "has_breeds", value: "1")
-        ]
+    func fetchImages(breedId: String, limit: Int, completion: @escaping ([CatImage]?, Error?) -> Void) {
+        let urlString = "\(baseURL)/images/search?breed_ids=\(breedId)&limit=\(limit)"
         
-        guard let url = components.url else { throw URLError(.badURL) }
+        var request = URLRequest(url: URL(string: urlString)!)
+        if !apiKey.isEmpty {
+            request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
+        }
         
-        var request = URLRequest(url: url)
-        request.setValue(apiKey, forHTTPHeaderField: "x-api-key")
-        
-        let (data, _) = try await URLSession.shared.data(for: request)
-        return try JSONDecoder().decode([CatImage].self, from: data)
+        URLSession.shared.dataTask(with: request) { data, response, error in
+            if let error = error {
+                completion(nil, error)
+                return
+            }
+            
+            guard let data = data else {
+                completion(nil, NSError(domain: "No data", code: -1))
+                return
+            }
+            
+            do {
+                let images = try JSONDecoder().decode([CatImage].self, from: data)
+                DispatchQueue.main.async {
+                    completion(images, nil)
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    completion(nil, error)
+                }
+            }
+        }.resume()
     }
 }
