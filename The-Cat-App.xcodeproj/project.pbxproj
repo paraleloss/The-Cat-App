@@ -17,6 +17,7 @@
 		C78AEA002FA3C9FA00948EB1 /* ImageCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9FF2FA3C9FA00948EB1 /* ImageCollectionViewCell.swift */; };
 		C78AEA022FA3CA7400948EB1 /* BreedSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AEA012FA3CA7400948EB1 /* BreedSelectionViewController.swift */; };
 		C78AEA042FA3CB1E00948EB1 /* ImageGalleryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AEA032FA3CB1E00948EB1 /* ImageGalleryViewController.swift */; };
+		C78AEA072FA42E8000948EB1 /* CatDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AEA062FA42E8000948EB1 /* CatDetailViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,7 @@
 		C78AE9FF2FA3C9FA00948EB1 /* ImageCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageCollectionViewCell.swift; sourceTree = "<group>"; };
 		C78AEA012FA3CA7400948EB1 /* BreedSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BreedSelectionViewController.swift; sourceTree = "<group>"; };
 		C78AEA032FA3CB1E00948EB1 /* ImageGalleryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGalleryViewController.swift; sourceTree = "<group>"; };
+		C78AEA062FA42E8000948EB1 /* CatDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatDetailViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +66,7 @@
 		C78AE9E12FA3C12D00948EB1 /* The-Cat-App */ = {
 			isa = PBXGroup;
 			children = (
+				C78AEA052FA42E6000948EB1 /* ViewControllers */,
 				C78AE9FE2FA3C9DF00948EB1 /* Views */,
 				C78AE9FB2FA3C8A900948EB1 /* API */,
 				C78AE9F62FA3C47C00948EB1 /* Models */,
@@ -101,6 +104,14 @@
 				C78AEA032FA3CB1E00948EB1 /* ImageGalleryViewController.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		C78AEA052FA42E6000948EB1 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				C78AEA062FA42E8000948EB1 /* CatDetailViewController.swift */,
+			);
+			path = ViewControllers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -175,6 +186,7 @@
 			files = (
 				C78AE9FD2FA3C8BB00948EB1 /* CatAPIService.swift in Sources */,
 				C78AE9E32FA3C12D00948EB1 /* AppDelegate.swift in Sources */,
+				C78AEA072FA42E8000948EB1 /* CatDetailViewController.swift in Sources */,
 				C78AEA002FA3C9FA00948EB1 /* ImageCollectionViewCell.swift in Sources */,
 				C78AEA022FA3CA7400948EB1 /* BreedSelectionViewController.swift in Sources */,
 				C78AEA042FA3CB1E00948EB1 /* ImageGalleryViewController.swift in Sources */,
