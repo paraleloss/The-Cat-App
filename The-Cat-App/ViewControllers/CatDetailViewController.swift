@@ -10,10 +10,10 @@ import UIKit
 class CatDetailViewController: UIViewController {
 
     private let scrollView: UIScrollView = {
-        let sv = UIScrollView()
-        sv.translatesAutoresizingMaskIntoConstraints = false
-        sv.showsVerticalScrollIndicator = true
-        return sv
+        let scrollView = UIScrollView()
+        scrollView.translatesAutoresizingMaskIntoConstraints = false
+        scrollView.showsVerticalScrollIndicator = true
+        return scrollView
     }()
     
     private let contentView: UIView = {
@@ -23,38 +23,20 @@ class CatDetailViewController: UIViewController {
     }()
     
     private let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFit
-        iv.backgroundColor = .systemGray6
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        iv.layer.cornerRadius = 12
-        iv.clipsToBounds = true
-        return iv
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        imageView.backgroundColor = .systemGray6
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.layer.cornerRadius = 12
+        imageView.clipsToBounds = true
+        return imageView
     }()
     
     private let activityIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView(style: .large)
-        ai.translatesAutoresizingMaskIntoConstraints = false
-        ai.hidesWhenStopped = true
-        return ai
-    }()
-    
-    private let idLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        label.textColor = .secondaryLabel
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
-    }()
-    
-    private let dimensionsLabel: UILabel = {
-        let label = UILabel()
-        label.font = UIFont.systemFont(ofSize: 14, weight: .medium)
-        label.textColor = .secondaryLabel
-        label.numberOfLines = 0
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
     }()
     
     private let breedCardView: UIView = {
@@ -67,14 +49,6 @@ class CatDetailViewController: UIViewController {
         view.layer.shadowOpacity = 0.1
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
-    }()
-    
-    private let breedTitleLabel: UILabel = {
-        let label = UILabel()
-        label.text = "🐱 Breed Information"
-        label.font = UIFont.systemFont(ofSize: 20, weight: .bold)
-        label.translatesAutoresizingMaskIntoConstraints = false
-        return label
     }()
     
     private let breedNameLabel: UILabel = {
@@ -121,13 +95,13 @@ class CatDetailViewController: UIViewController {
         return label
     }()
     
-    // MARK: - Properties
     private let catImage: CatImage
+    private let breed: CatBreed?
     private var loadedImage: UIImage?
     
-    // MARK: - Init
-    init(catImage: CatImage, image: UIImage?) {
+    init(catImage: CatImage, breed: CatBreed?, image: UIImage?) {
         self.catImage = catImage
+        self.breed = breed
         self.loadedImage = image
         super.init(nibName: nil, bundle: nil)
     }
@@ -136,7 +110,6 @@ class CatDetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -145,21 +118,17 @@ class CatDetailViewController: UIViewController {
         loadImageIfNeeded()
     }
     
-    // MARK: - Setup
     private func setupUI() {
-        view.backgroundColor = .systemBackground
-        title = "Cat Details"
+        view.backgroundColor = .systemGray4
+        title = "Más información"
         
         view.addSubview(scrollView)
         scrollView.addSubview(contentView)
         
         contentView.addSubview(imageView)
         contentView.addSubview(activityIndicator)
-        contentView.addSubview(idLabel)
-        contentView.addSubview(dimensionsLabel)
         contentView.addSubview(breedCardView)
-        
-        breedCardView.addSubview(breedTitleLabel)
+
         breedCardView.addSubview(breedNameLabel)
         breedCardView.addSubview(temperamentLabel)
         breedCardView.addSubview(originLabel)
@@ -185,25 +154,13 @@ class CatDetailViewController: UIViewController {
             
             activityIndicator.centerXAnchor.constraint(equalTo: imageView.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: imageView.centerYAnchor),
-            
-            idLabel.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 12),
-            idLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            idLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
-            dimensionsLabel.topAnchor.constraint(equalTo: idLabel.bottomAnchor, constant: 4),
-            dimensionsLabel.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
-            dimensionsLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
-            
-            breedCardView.topAnchor.constraint(equalTo: dimensionsLabel.bottomAnchor, constant: 20),
+
+            breedCardView.topAnchor.constraint(equalTo: imageView.bottomAnchor, constant: 20),
             breedCardView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor, constant: 16),
             breedCardView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -16),
             breedCardView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor, constant: -16),
-            
-            breedTitleLabel.topAnchor.constraint(equalTo: breedCardView.topAnchor, constant: 16),
-            breedTitleLabel.leadingAnchor.constraint(equalTo: breedCardView.leadingAnchor, constant: 16),
-            breedTitleLabel.trailingAnchor.constraint(equalTo: breedCardView.trailingAnchor, constant: -16),
-            
-            breedNameLabel.topAnchor.constraint(equalTo: breedTitleLabel.bottomAnchor, constant: 12),
+
+            breedNameLabel.topAnchor.constraint(equalTo: breedCardView.topAnchor, constant: 12),
             breedNameLabel.leadingAnchor.constraint(equalTo: breedCardView.leadingAnchor, constant: 16),
             breedNameLabel.trailingAnchor.constraint(equalTo: breedCardView.trailingAnchor, constant: -16),
             
@@ -229,46 +186,37 @@ class CatDetailViewController: UIViewController {
     private func setupNavigationBar() {
         navigationController?.navigationBar.prefersLargeTitles = false
         navigationItem.largeTitleDisplayMode = .never
-        
-        // Botón para compartir
+
         let shareButton = UIBarButtonItem(barButtonSystemItem: .action, target: self, action: #selector(shareImage))
         navigationItem.rightBarButtonItem = shareButton
     }
     
-    // MARK: - Display Methods
     private func displayCatInfo() {
-        // Mostrar ID
-        idLabel.text = "🆔 ID: \(catImage.id)"
         
-        // Mostrar dimensiones
-        dimensionsLabel.text = "📏 Dimensions: \(catImage.width) x \(catImage.height) pixels"
-        
-        // Mostrar información de la raza si existe
-        if let breed = catImage.breeds?.first {
-            breedNameLabel.text = "✨ \(breed.name)"
+        if let breed = breed {
+            breedNameLabel.text = "🐈 \(breed.name)"
             
             if let temperament = breed.temperament {
-                temperamentLabel.text = "🎭 Temperament: \(temperament)"
+                temperamentLabel.text = "🎭 Temperamento: \(temperament)"
             }
             
             if let origin = breed.origin {
-                originLabel.text = "🌍 Origin: \(origin)"
+                originLabel.text = "🌍 Origen: \(origin)"
             }
             
             if let lifeSpan = breed.lifeSpan {
-                lifeSpanLabel.text = "⏱️ Life Span: \(lifeSpan) years"
+                lifeSpanLabel.text = "⏱️ Esperanza de vida: \(lifeSpan) años"
             }
             
             if let description = breed.description {
-                descriptionLabel.text = "📝 About: \(description)"
+                descriptionLabel.text = "📝 Acerca de esta raza: \(description)"
             }
         } else {
-            // Si no hay información de raza
-            breedNameLabel.text = "No breed information available"
+            breedNameLabel.text = "No hay información de la raza"
             temperamentLabel.text = ""
             originLabel.text = ""
             lifeSpanLabel.text = ""
-            descriptionLabel.text = "This cat doesn't have associated breed data in the API."
+            descriptionLabel.text = "Aún no se encuentra información de este gato en la raza."
         }
     }
     
@@ -276,7 +224,6 @@ class CatDetailViewController: UIViewController {
         if let image = loadedImage {
             imageView.image = image
         } else {
-            // Si no se pasó la imagen, cargarla desde la URL
             activityIndicator.startAnimating()
             guard let url = URL(string: catImage.url) else {
                 activityIndicator.stopAnimating()
@@ -297,8 +244,7 @@ class CatDetailViewController: UIViewController {
             }.resume()
         }
     }
-    
-    // MARK: - Actions
+
     @objc private func shareImage() {
         guard let image = imageView.image else {
             let alert = UIAlertController(title: "No Image", message: "Wait for the image to load first", preferredStyle: .alert)
@@ -307,7 +253,7 @@ class CatDetailViewController: UIViewController {
             return
         }
         
-        let activityVC = UIActivityViewController(activityItems: [image, "Check out this amazing cat! 🐱"], applicationActivities: nil)
+        let activityVC = UIActivityViewController(activityItems: [image, "Hey, mira este gato! 🐱"], applicationActivities: nil)
         present(activityVC, animated: true)
     }
 }

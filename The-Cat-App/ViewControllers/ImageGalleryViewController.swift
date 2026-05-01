@@ -134,6 +134,18 @@ extension ImageGalleryViewController: UICollectionViewDataSource, UICollectionVi
         let width = (view.frame.width - spacing * 3) / 2
         return CGSize(width: width, height: width)
     }
+
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let catImage = images[indexPath.row]
+        
+        if let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell {
+            let detailVC = CatDetailViewController(catImage: catImage, breed: breed, image: cell.loadedImage)
+            navigationController?.pushViewController(detailVC, animated: true)
+        } else {
+            let detailVC = CatDetailViewController(catImage: catImage, breed: breed, image: nil)
+            navigationController?.pushViewController(detailVC, animated: true)
+        }
+    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
@@ -147,19 +159,5 @@ extension ImageGalleryViewController: UICollectionViewDataSource, UICollectionVi
         return 10
     }
     
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let catImage = images[indexPath.row]
-        
-        // Obtener la celda para acceder a la imagen ya cargada
-        guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else {
-            // Si no se puede obtener la celda, ir a detalles sin imagen precargada
-            let detailVC = CatDetailViewController(catImage: catImage, image: nil)
-            navigationController?.pushViewController(detailVC, animated: true)
-            return
-        }
-        
-        // Pasar la imagen ya cargada para mostrar instantáneamente
-        let detailVC = CatDetailViewController(catImage: catImage, image: cell.loadedImage)
-        navigationController?.pushViewController(detailVC, animated: true)
-    }
+
 }
