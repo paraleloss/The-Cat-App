@@ -101,7 +101,6 @@
 			isa = PBXGroup;
 			children = (
 				C78AE9FF2FA3C9FA00948EB1 /* ImageCollectionViewCell.swift */,
-				C78AEA032FA3CB1E00948EB1 /* ImageGalleryViewController.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -110,6 +109,7 @@
 			isa = PBXGroup;
 			children = (
 				C78AEA062FA42E8000948EB1 /* CatDetailViewController.swift */,
+				C78AEA032FA3CB1E00948EB1 /* ImageGalleryViewController.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";

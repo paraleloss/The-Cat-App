@@ -146,4 +146,20 @@ extension ImageGalleryViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
+    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let catImage = images[indexPath.row]
+        
+        // Obtener la celda para acceder a la imagen ya cargada
+        guard let cell = collectionView.cellForItem(at: indexPath) as? ImageCollectionViewCell else {
+            // Si no se puede obtener la celda, ir a detalles sin imagen precargada
+            let detailVC = CatDetailViewController(catImage: catImage, image: nil)
+            navigationController?.pushViewController(detailVC, animated: true)
+            return
+        }
+        
+        // Pasar la imagen ya cargada para mostrar instantáneamente
+        let detailVC = CatDetailViewController(catImage: catImage, image: cell.loadedImage)
+        navigationController?.pushViewController(detailVC, animated: true)
+    }
 }
