@@ -12,22 +12,22 @@ class ImageGalleryViewController: UIViewController {
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
-        let cv = UICollectionView(frame: .zero, collectionViewLayout: layout)
-        cv.translatesAutoresizingMaskIntoConstraints = false
-        cv.backgroundColor = .systemBackground
-        return cv
+        let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.translatesAutoresizingMaskIntoConstraints = false
+        collectionView.backgroundColor = .systemBackground
+        return collectionView
     }()
     
     private let activityIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView(style: .large)
-        ai.translatesAutoresizingMaskIntoConstraints = false
-        ai.hidesWhenStopped = true
-        return ai
+        let activityIndicator = UIActivityIndicatorView(style: .large)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
     }()
     
     private let emptyStateLabel: UILabel = {
         let label = UILabel()
-        label.text = "No images found for this breed"
+        label.text = "No se encontraron imágenes para esta raza"
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18)
         label.textColor = .gray
@@ -59,11 +59,11 @@ class ImageGalleryViewController: UIViewController {
 
     private func setupUI() {
         title = breed.name
-        view.backgroundColor = .systemBackground
-        
+        view.backgroundColor = .systemGray4
         view.addSubview(collectionView)
         view.addSubview(activityIndicator)
         view.addSubview(emptyStateLabel)
+        collectionView.backgroundColor = .systemGray4
         
         NSLayoutConstraint.activate([
             collectionView.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor),
@@ -158,6 +158,4 @@ extension ImageGalleryViewController: UICollectionViewDataSource, UICollectionVi
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return 10
     }
-    
-
 }

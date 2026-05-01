@@ -11,7 +11,7 @@ class BreedSelectionViewController: UIViewController {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.text = "Cat Gallery"
+        label.text = "🐈‍⬛ Cat Gallery 🐈"
         label.font = UIFont.systemFont(ofSize: 32, weight: .bold)
         label.textAlignment = .center
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -34,7 +34,7 @@ class BreedSelectionViewController: UIViewController {
     
     private let limitLabel: UILabel = {
         let label = UILabel()
-        label.text = "Number of Images (1-100):"
+        label.text = "Imágenes que deseas (1-100):"
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -42,7 +42,7 @@ class BreedSelectionViewController: UIViewController {
     
     private let limitTextField: UITextField = {
         let textField = UITextField()
-        textField.placeholder = "Enter limit (1-100)"
+        textField.placeholder = "Escribe el límite (1-100)"
         textField.borderStyle = .roundedRect
         textField.keyboardType = .numberPad
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -51,7 +51,7 @@ class BreedSelectionViewController: UIViewController {
     
     private let searchButton: UIButton = {
         let button = UIButton(type: .system)
-        button.setTitle("Search Cats", for: .normal)
+        button.setTitle("Buscar gatos 🐾", for: .normal)
         button.titleLabel?.font = UIFont.systemFont(ofSize: 20, weight: .semibold)
         button.backgroundColor = .systemBlue
         button.setTitleColor(.white, for: .normal)
@@ -94,7 +94,7 @@ class BreedSelectionViewController: UIViewController {
             titleLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             titleLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
-            breedLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 30),
+            breedLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 48),
             breedLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             breedLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
             
@@ -158,12 +158,12 @@ class BreedSelectionViewController: UIViewController {
     
     @objc private func searchButtonTapped() {
         guard let selectedBreed = selectedBreed else {
-            showError(message: "Please select a breed")
+            showError(message: "Por favor selecciona una raza")
             return
         }
         
         guard let limitText = limitTextField.text, let limit = Int(limitText), limit >= 1, limit <= 100 else {
-            showError(message: "Please enter a valid limit between 1 and 100")
+            showError(message: "Ingresa un límite válido entre 1 y 100")
             return
         }
         

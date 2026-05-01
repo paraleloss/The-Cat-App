@@ -11,21 +11,20 @@ class ImageCollectionViewCell: UICollectionViewCell {
     static let identifier = "ImageCollectionViewCell"
     
     private let imageView: UIImageView = {
-        let iv = UIImageView()
-        iv.contentMode = .scaleAspectFill
-        iv.clipsToBounds = true
-        iv.translatesAutoresizingMaskIntoConstraints = false
-        return iv
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        return imageView
     }()
     
     private let activityIndicator: UIActivityIndicatorView = {
-        let ai = UIActivityIndicatorView(style: .medium)
-        ai.translatesAutoresizingMaskIntoConstraints = false
-        ai.hidesWhenStopped = true
-        return ai
+        let activityIndicator = UIActivityIndicatorView(style: .medium)
+        activityIndicator.translatesAutoresizingMaskIntoConstraints = false
+        activityIndicator.hidesWhenStopped = true
+        return activityIndicator
     }()
-    
-    // Propiedad para almacenar la imagen cargada
+
     private(set) var loadedImage: UIImage?
     
     override init(frame: CGRect) {
@@ -50,8 +49,6 @@ class ImageCollectionViewCell: UICollectionViewCell {
             activityIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
-        
-        // Redondear esquinas
         contentView.layer.cornerRadius = 8
         contentView.clipsToBounds = true
     }
