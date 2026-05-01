@@ -9,7 +9,6 @@ import UIKit
 
 class ImageGalleryViewController: UIViewController {
     
-    // MARK: - UI Components
     private let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .vertical
@@ -36,13 +35,11 @@ class ImageGalleryViewController: UIViewController {
         label.isHidden = true
         return label
     }()
-    
-    // MARK: - Properties
+
     private let breed: CatBreed
     private let limit: Int
     private var images: [CatImage] = []
-    
-    // MARK: - Init
+
     init(breed: CatBreed, limit: Int) {
         self.breed = breed
         self.limit = limit
@@ -52,16 +49,14 @@ class ImageGalleryViewController: UIViewController {
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
-    // MARK: - Lifecycle
+
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
         setupCollectionView()
         fetchImages()
     }
-    
-    // MARK: - Setup
+
     private func setupUI() {
         title = breed.name
         view.backgroundColor = .systemBackground
@@ -91,8 +86,7 @@ class ImageGalleryViewController: UIViewController {
         collectionView.dataSource = self
         collectionView.register(ImageCollectionViewCell.self, forCellWithReuseIdentifier: ImageCollectionViewCell.identifier)
     }
-    
-    // MARK: - Methods
+
     private func fetchImages() {
         activityIndicator.startAnimating()
         
@@ -123,7 +117,6 @@ class ImageGalleryViewController: UIViewController {
     }
 }
 
-// MARK: - UICollectionViewDataSource & Delegate
 extension ImageGalleryViewController: UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return images.count

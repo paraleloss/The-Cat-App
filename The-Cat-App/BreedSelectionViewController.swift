@@ -9,7 +9,6 @@ import UIKit
 
 class BreedSelectionViewController: UIViewController {
     
-    // MARK: - UI Components
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.text = "Cat Gallery"
@@ -68,11 +67,9 @@ class BreedSelectionViewController: UIViewController {
         return ai
     }()
     
-    // MARK: - Properties
     private var breeds: [CatBreed] = []
     private var selectedBreed: CatBreed?
     
-    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         setupUI()
@@ -80,8 +77,7 @@ class BreedSelectionViewController: UIViewController {
         setupActions()
         fetchBreeds()
     }
-    
-    // MARK: - Setup
+
     private func setupUI() {
         view.backgroundColor = .systemBackground
         
@@ -138,8 +134,7 @@ class BreedSelectionViewController: UIViewController {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(dismissKeyboard))
         view.addGestureRecognizer(tapGesture)
     }
-    
-    // MARK: - Methods
+
     private func fetchBreeds() {
         activityIndicator.startAnimating()
         
@@ -187,7 +182,6 @@ class BreedSelectionViewController: UIViewController {
     }
 }
 
-// MARK: - UIPickerViewDataSource & Delegate
 extension BreedSelectionViewController: UIPickerViewDataSource, UIPickerViewDelegate {
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
@@ -206,7 +200,6 @@ extension BreedSelectionViewController: UIPickerViewDataSource, UIPickerViewDele
     }
 }
 
-// MARK: - UITextFieldDelegate
 extension BreedSelectionViewController: UITextFieldDelegate {
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()

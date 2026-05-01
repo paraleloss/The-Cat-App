@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		C78AE9E32FA3C12D00948EB1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9E22FA3C12D00948EB1 /* AppDelegate.swift */; };
 		C78AE9E52FA3C12D00948EB1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9E42FA3C12D00948EB1 /* SceneDelegate.swift */; };
-		C78AE9E72FA3C12D00948EB1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9E62FA3C12D00948EB1 /* ViewController.swift */; };
-		C78AE9EA2FA3C12D00948EB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C78AE9E92FA3C12D00948EB1 /* Base */; };
 		C78AE9EC2FA3C12F00948EB1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C78AE9EB2FA3C12F00948EB1 /* Assets.xcassets */; };
 		C78AE9EF2FA3C12F00948EB1 /* Base in Resources */ = {isa = PBXBuildFile; fileRef = C78AE9EE2FA3C12F00948EB1 /* Base */; };
 		C78AE9F82FA3C49A00948EB1 /* CatBreed.swift in Sources */ = {isa = PBXBuildFile; fileRef = C78AE9F72FA3C49A00948EB1 /* CatBreed.swift */; };
@@ -25,8 +23,6 @@
 		C78AE9DF2FA3C12D00948EB1 /* The-Cat-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "The-Cat-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C78AE9E22FA3C12D00948EB1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C78AE9E42FA3C12D00948EB1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		C78AE9E62FA3C12D00948EB1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C78AE9E92FA3C12D00948EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C78AE9EB2FA3C12F00948EB1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C78AE9EE2FA3C12F00948EB1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C78AE9F02FA3C12F00948EB1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -73,8 +69,6 @@
 				C78AE9F62FA3C47C00948EB1 /* Models */,
 				C78AE9E22FA3C12D00948EB1 /* AppDelegate.swift */,
 				C78AE9E42FA3C12D00948EB1 /* SceneDelegate.swift */,
-				C78AE9E62FA3C12D00948EB1 /* ViewController.swift */,
-				C78AE9E82FA3C12D00948EB1 /* Main.storyboard */,
 				C78AE9EB2FA3C12F00948EB1 /* Assets.xcassets */,
 				C78AE9ED2FA3C12F00948EB1 /* LaunchScreen.storyboard */,
 				C78AE9F02FA3C12F00948EB1 /* Info.plist */,
@@ -169,7 +163,6 @@
 			files = (
 				C78AE9EC2FA3C12F00948EB1 /* Assets.xcassets in Resources */,
 				C78AE9EF2FA3C12F00948EB1 /* Base in Resources */,
-				C78AE9EA2FA3C12D00948EB1 /* Base in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -180,7 +173,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C78AE9E72FA3C12D00948EB1 /* ViewController.swift in Sources */,
 				C78AE9FD2FA3C8BB00948EB1 /* CatAPIService.swift in Sources */,
 				C78AE9E32FA3C12D00948EB1 /* AppDelegate.swift in Sources */,
 				C78AEA002FA3C9FA00948EB1 /* ImageCollectionViewCell.swift in Sources */,
@@ -195,14 +187,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		C78AE9E82FA3C12D00948EB1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C78AE9E92FA3C12D00948EB1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C78AE9ED2FA3C12F00948EB1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -345,7 +329,6 @@
 				INFOPLIST_FILE = "The-Cat-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -373,7 +356,6 @@
 				INFOPLIST_FILE = "The-Cat-App/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
