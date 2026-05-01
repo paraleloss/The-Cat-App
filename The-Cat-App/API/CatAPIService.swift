@@ -10,8 +10,7 @@ import Foundation
 class CatAPIService {
     static let shared = CatAPIService()
     private let baseURL = "https://api.thecatapi.com/v1"
-    // Puedes obtener una API Key gratis en https://thecatapi.com
-    private let apiKey = "TU_API_KEY_AQUI" // Deja vacío si no tienes, pero tendrás límites
+    private let apiKey = " "
     
     private init() {}
     

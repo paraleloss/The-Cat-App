@@ -21,7 +21,7 @@ class BreedSelectionViewController: UIViewController {
     
     private let breedLabel: UILabel = {
         let label = UILabel()
-        label.text = "Select Breed:"
+        label.text = "Selecciona una raza:"
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -83,7 +83,7 @@ class BreedSelectionViewController: UIViewController {
     
     // MARK: - Setup
     private func setupUI() {
-        view.backgroundColor = .systemRed
+        view.backgroundColor = .systemBackground
         
         view.addSubview(titleLabel)
         view.addSubview(breedLabel)
@@ -105,7 +105,7 @@ class BreedSelectionViewController: UIViewController {
             breedPicker.topAnchor.constraint(equalTo: breedLabel.bottomAnchor, constant: 8),
             breedPicker.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
             breedPicker.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -20),
-            breedPicker.heightAnchor.constraint(equalToConstant: 150),
+            breedPicker.heightAnchor.constraint(equalToConstant: 200),
             
             limitLabel.topAnchor.constraint(equalTo: breedPicker.bottomAnchor, constant: 20),
             limitLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 20),
