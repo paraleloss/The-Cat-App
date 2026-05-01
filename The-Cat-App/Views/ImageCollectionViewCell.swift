@@ -25,6 +25,9 @@ class ImageCollectionViewCell: UICollectionViewCell {
         return ai
     }()
     
+    // Propiedad para almacenar la imagen cargada
+    private(set) var loadedImage: UIImage?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
         setupUI()
@@ -47,14 +50,20 @@ class ImageCollectionViewCell: UICollectionViewCell {
             activityIndicator.centerXAnchor.constraint(equalTo: contentView.centerXAnchor),
             activityIndicator.centerYAnchor.constraint(equalTo: contentView.centerYAnchor)
         ])
+        
+        // Redondear esquinas
+        contentView.layer.cornerRadius = 8
+        contentView.clipsToBounds = true
     }
     
-    func configure(with imageURL: String) {
+    func configure(with imageURL: String, completion: ((UIImage?) -> Void)? = nil) {
         activityIndicator.startAnimating()
         imageView.image = nil
+        loadedImage = nil
         
         guard let url = URL(string: imageURL) else {
             activityIndicator.stopAnimating()
+            completion?(nil)
             return
         }
         
@@ -62,13 +71,16 @@ class ImageCollectionViewCell: UICollectionViewCell {
             guard let data = data, error == nil, let image = UIImage(data: data) else {
                 DispatchQueue.main.async {
                     self?.activityIndicator.stopAnimating()
+                    completion?(nil)
                 }
                 return
             }
             
             DispatchQueue.main.async {
                 self?.imageView.image = image
+                self?.loadedImage = image
                 self?.activityIndicator.stopAnimating()
+                completion?(image)
             }
         }.resume()
     }
@@ -76,6 +88,7 @@ class ImageCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         imageView.image = nil
+        loadedImage = nil
         activityIndicator.stopAnimating()
     }
 }
